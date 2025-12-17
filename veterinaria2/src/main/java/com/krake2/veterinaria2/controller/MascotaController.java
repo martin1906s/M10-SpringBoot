@@ -39,4 +39,16 @@ public class MascotaController {
         return ResponseEntity.ok(mascotas);
 
     }
+
+    @GetMapping("/buscar/nombre/{nombre}")
+    public ResponseEntity<?> buscarPorNombre(@PathVariable String nombre) {
+        Optional<Mascota> mascota = mascotaService.buscarPorNombre(nombre);
+        return mascota.isPresent() ? ResponseEntity.ok(mascota.get()) : ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mascota NO encotrada");
+    }
+
+      @GetMapping("/buscar/id/{id}")
+    public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
+        Optional<Mascota> mascota = mascotaService.buscarPorId(id);
+        return mascota.isPresent() ? ResponseEntity.ok(mascota.get()) : ResponseEntity.status(HttpStatus.NOT_FOUND).body("Mascota NO encotrada");
+    }
 }

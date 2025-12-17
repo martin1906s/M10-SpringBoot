@@ -23,11 +23,11 @@ public class MascotaController {
     private List<Mascota> mascotas = new ArrayList<>();
 
     public MascotaController() {
-        mascotas.add(new Mascota(1, "Firulais", "Perro", 3, "Juan Perez", LocalDate.parse("2022-01-05")));
-        mascotas.add(new Mascota(2, "Michi", "Gato", 2, "Ana Gomez", LocalDate.parse("2022-02-10")));
-        mascotas.add(new Mascota(3, "Mony", "Perro", 4, "Martín", LocalDate.parse("2022-03-15")));
-        mascotas.add(new Mascota(4, "Luna", "Gato", 1, "Sofía López", LocalDate.parse("2022-04-20")));
-        mascotas.add(new Mascota(5, "Max", "Perro", 5, "Carlos Ruiz", LocalDate.parse("2022-05-25")));
+        mascotas.add(new Mascota(1L, "Firulais", "Perro", 3, "Juan Perez", LocalDate.parse("2022-01-05")));
+        mascotas.add(new Mascota(2L, "Michi", "Gato", 2, "Ana Gomez", LocalDate.parse("2022-02-10")));
+        mascotas.add(new Mascota(3L, "Mony", "Perro", 4, "Martín", LocalDate.parse("2022-03-15")));
+        mascotas.add(new Mascota(4L, "Luna", "Gato", 1, "Sofía López", LocalDate.parse("2022-04-20")));
+        mascotas.add(new Mascota(5L, "Max", "Perro", 5, "Carlos Ruiz", LocalDate.parse("2022-05-25")));
     }
 
     @GetMapping

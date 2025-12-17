@@ -20,7 +20,7 @@ public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mascota", unique=true)
-    private int id;
+    private Long id;
 
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;

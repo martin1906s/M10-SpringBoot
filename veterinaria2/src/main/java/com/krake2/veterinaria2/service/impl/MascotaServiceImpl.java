@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.krake2.veterinaria2.entity.EstadoMascota;
 import com.krake2.veterinaria2.entity.Mascota;
 import com.krake2.veterinaria2.repository.MascotaRepository;
 import com.krake2.veterinaria2.service.MascotaService;
@@ -60,4 +61,18 @@ public class MascotaServiceImpl implements MascotaService {
 
     }
 
+    @Override
+    @SneakyThrows
+    public Mascota cambiarEstadoMascota(Long id, EstadoMascota estado) {
+        Mascota mascotaExistente = mascotaRepository.findById(id).orElseThrow(() -> new Exception("Producto con id " + id + " no encontrado"));
+
+        mascotaExistente.setEstado(estado);
+        return mascotaRepository.save(mascotaExistente);
+
+    }
+
+    @Override
+    public List<Mascota> obtenerEstadoMascota(EstadoMascota estado) {
+        return mascotaRepository.findByEstado(estado);
+    }
 }
